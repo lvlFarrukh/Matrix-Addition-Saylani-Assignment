@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta id="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matrix Addition</title>
+
+    <style>
+        .numberBox {
+            width: 30px;
+            height: 30px;
+        }
+        .btn {
+            width: 120px;
+            height: 40px;
+            font-size: 20px;
+            background-color: azure;
+            border: 2px solid dimgray;
+            border-radius: 5px;
+            padding: 10px;
+            margin-top: 20px;
+        }
+        h1 {
+            margin: 0px
+        }
+    </style>
+</head>
+<body style="text-align: center;">
+
+    <h1>
+        Matrix Addition
+    </h1>
+
+    <div>
+        <div>
+            <div>
+                <input type="number" placeholder="0" class="numberBox" id='ar111' value='0'>
+                <input type="number" placeholder="0" class="numberBox" id='ar112' value='0'>
+                <input type="number" placeholder="0" class="numberBox" id='ar113' value='0'>
+            </div>
+            <div>
+                <input type="number" placeholder="0" class="numberBox" id='ar121' value='0'>
+                <input type="number" placeholder="0" class="numberBox" id='ar122' value='0'>
+                <input type="number" placeholder="0" class="numberBox" id='ar123' value='0'>
+            </div>
+            <div>
+                <input type="number" placeholder="0" class="numberBox" id='ar131' value='0'>
+                <input type="number" placeholder="0" class="numberBox" id='ar132' value='0'>
+                <input type="number" placeholder="0" class="numberBox" id='ar133' value='0'>
+            </div>
+        </div>
+
+        <br>
+
+        <h1> + </h1>
+
+        <br>
+
+        <div>
+            <div>
+                <input type="number" placeholder="0" class="numberBox" id='ar211' value='0'>
+                <input type="number" placeholder="0" class="numberBox" id='ar212' value='0'>
+                <input type="number" placeholder="0" class="numberBox" id='ar213' value='0'>
+            </div>
+            <div>
+                <input type="number" placeholder="0" class="numberBox" id='ar221' value='0'>
+                <input type="number" placeholder="0" class="numberBox" id='ar222' value='0'>
+                <input type="number" placeholder="0" class="numberBox" id='ar223' value='0'>
+            </div>
+            <div>
+                <input type="number" placeholder="0" class="numberBox" id='ar231' value='0'>
+                <input type="number" placeholder="0" class="numberBox" id='ar232' value='0'>
+                <input type="number" placeholder="0" class="numberBox" id='ar233' value='0'>
+            </div>
+        </div>
+
+        <h1> = </h1>
+
+        <br>
+
+        <div>
+            <div>
+                <input type="number" placeholder="0" class="numberBox" id='ar311' value='0'>
+                <input type="number" placeholder="0" class="numberBox" id='ar312' value='0'>
+                <input type="number" placeholder="0" class="numberBox" id='ar313' value='0'>
+            </div>
+            <div>
+                <input type="number" placeholder="0" class="numberBox" id='ar321' value='0'>
+                <input type="number" placeholder="0" class="numberBox" id='ar322' value='0'>
+                <input type="number" placeholder="0" class="numberBox" id='ar323' value='0'>
+            </div>
+            <div>
+                <input type="number" placeholder="0" class="numberBox" id='ar331' value='0'>
+                <input type="number" placeholder="0" class="numberBox" id='ar332' value='0'>
+                <input type="number" placeholder="0" class="numberBox" id='ar333' value='0'>
+            </div>
+        </div>
+
+        
+        <button onClick="sum()"class='btn'>
+            Add
+        </button>
+
+    </div>
+    
+    <script>
+        const sum = () => {
+            let arr1 = [[],[],[]];
+            let arr2 = [[],[],[]];
+
+            for(var i = 0; i<3; i++) {
+                for(var j = 0; j<3; j++) {
+                    let id1 = `ar1${i + 1}${j + 1}`;
+                    let id2 = `ar2${i + 1}${j + 1}`;
+                    arr1[i][j] = Number(document.getElementById(id1).value)
+                    arr2[i][j] = Number(document.getElementById(id2).value)
+                }
+           }
+
+           for(var i = 0; i<3; i++) {
+                for(var j = 0; j<3; j++) {
+                    let id = `ar3${i + 1}${j + 1}`;
+                    console.log(id)
+                    document.getElementById(id).value = arr1[i][j] + arr2[i][j];
+                }
+           }
+
+        }
+    </script>
+</body>
+</html>
